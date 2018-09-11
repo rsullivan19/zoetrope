@@ -5,22 +5,18 @@ void setup()
 {
   pinMode(MotorLF, OUTPUT);
   pinMode(MotorLB, OUTPUT);
-  pinMode(MotorRF, OUTPUT);
-  pinMode(MotorRB, OUTPUT);
   Serial.begin(9600);
 }
 
 void motor_speed(int speed_value)
 {
-  analogWrite(10, speed_value):
-  digitalWrite(11, direction);
-}
-
-void loop() {
-    digitalWrite(MotorLF, HIGH);
-    digitalWrite(MotorLB, LOW);
-    digitalWrite(MotorRF, HIGH);
-    digitalWrite(MotorRB, LOW);
+  analogWrite(10, speed_value);
+  //digitalWrite(11, direction);
   }
-  
 
+  void loop() {
+  digitalWrite(MotorLF, HIGH);
+  digitalWrite(MotorLB, LOW);
+  int sensorValue = analogRead(A0);
+  Serial.println(sensorValue);
+}
