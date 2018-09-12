@@ -15,5 +15,6 @@ void loop() {
   digitalWrite(MotorLB, LOW);
   int MotorS = analogRead(A0);
   Serial.println(MotorS);
+  analogWrite(MotorS, 250);
  
 }
