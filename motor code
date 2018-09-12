@@ -1,22 +1,19 @@
 int MotorLF = 10;
 int MotorLB = 9;
+int MotorS = analogRead(A0);
 
 void setup()
 {
   pinMode(MotorLF, OUTPUT);
   pinMode(MotorLB, OUTPUT);
+  pinMode(MotorS, OUTPUT);
   Serial.begin(9600);
 }
 
-void motor_speed(int speed_value)
-{
-  analogWrite(10, speed_value);
-  //digitalWrite(11, direction);
-  }
-
-  void loop() {
+void loop() {
   digitalWrite(MotorLF, HIGH);
   digitalWrite(MotorLB, LOW);
-  int sensorValue = analogRead(A0);
-  Serial.println(sensorValue);
+  int MotorS = analogRead(A0);
+  Serial.println(MotorS);
+ 
 }
