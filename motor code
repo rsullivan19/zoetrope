@@ -1,8 +1,4 @@
-/*
-Adafruit Arduino - Lesson 15. Bi-directional Motor
-*/
- 
-int enablePin = 11;
+ int enablePin = 11;
 int in1Pin = 10;
 int in2Pin = 9;
 int switchPin = 7;
