@@ -1,19 +1,28 @@
-int potpin = 0;
-int ledpin = 13;
-int val;
+int ledpot = 1;
+int motorpot = 0;
+int ledpin = 7;
+int motorpin = 9;
+int ledval;
+int motorval;
 void setup()
 {
-  pinMode(12, OUTPUT);
+  pinMode(motorpin, OUTPUT);
   pinMode(ledpin, OUTPUT);
 }
 
 void loop()
 {
-  val = analogRead(potpin);            
-  val = map(val, 0, 1023, 500, 5);   
+  ledval = analogRead(ledpot);
+  ledval = map(ledval, 0, 1023, 500, 5);
+
+  motorval = analogRead(motorpot);
+  motorval = map(motorval, 0, 1023, 0, 255);
+
   digitalWrite(ledpin, HIGH);
-  delayMicroseconds(1000);                          
+  delayMicroseconds(1000);
   digitalWrite(ledpin, LOW);
-  delay(val);
-  digitalWrite(12, HIGH);
+  delay(ledval);
+
+ // digitalWrite(motorpin, HIGH);
+ analogWrite(motorpin, motorval);
 }
